@@ -3,4 +3,4 @@ project(LL_1_)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(LL_1_ main.cpp)
+add_executable(LL_1_ main.cpp LL_1_grammer.cpp LL_1_grammer.h)
