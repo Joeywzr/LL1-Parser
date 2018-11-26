@@ -4,6 +4,7 @@
 
 #ifndef LL_1_LL_1_GRAMMER_H
 #define LL_1_LL_1_GRAMMER_H
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -12,13 +13,16 @@
 #include <string>
 #include <iomanip>
 #include <stack>
+
 using namespace std;
 
-typedef struct DEDUCTION{
+typedef struct DEDUCTION
+{
     string left;
     string right;
     bool is_left_recursion = false;
-}DEDUCTION;
+} DEDUCTION;
+
 
 class LL_1_grammer
 {
@@ -34,6 +38,8 @@ class LL_1_grammer
 
     string x;
 
+    string table[7][10];
+
 public:
 
 
@@ -43,7 +49,7 @@ public:
 
     void print_test();
 
-    void ll_pushback(DEDUCTION mid){deduction.push_back(mid);}
+    void ll_pushback(DEDUCTION mid) { deduction.push_back(mid); }
 
 //    bool compare(DEDUCTION x, DEDUCTION y);
 
@@ -59,10 +65,11 @@ public:
 
     void analysis_program(string text);
 
+    int number_non(string s);
 
+    int number_ter(string s);
 
-
+    string process(string input);
 };
-
 
 #endif //LL_1_LL_1_GRAMMER_H

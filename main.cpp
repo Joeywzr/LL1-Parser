@@ -17,23 +17,18 @@ int main()
     ll.init();
     fin.get(C);
     DEDUCTION mid;
-    while(!fin.eof())
-    {
+    while (!fin.eof()) {//将产生式存入
         mid.left = C;
         fin.get(C);
-        while(C != '>')
+        while (C != '>')
             fin.get(C);//跳过箭头
         fin.get(C);
-        while(C!='\n' && !fin.eof())
-        {
+        while (C != '\n' && !fin.eof()) {
             if (C == ' ') {}
-            else if (C == '|')
-            {
+            else if (C == '|') {
                 ll.ll_pushback(mid);
                 mid.right.clear();
-            }
-            else
-            {
+            } else {
                 mid.right.push_back(C);
             }
             fin.get(C);
@@ -47,7 +42,11 @@ int main()
     ll.follow_set();
     ll.print_test();
     ll.analysis_table();
-
+    string text;
+    cout << "请输入待预测符号串：" << endl;
+    cin >> text;
+    text = ll.process(text);
+    ll.analysis_program(text);
 
 
     return 0;
