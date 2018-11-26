@@ -43,7 +43,10 @@ int main()
         fin.get(C);
     }
     ll.remove_direct_left_recursion();
+    ll.first_set();
+    ll.follow_set();
     ll.print_test();
+    ll.analysis_table();
 
 
 

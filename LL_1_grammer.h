@@ -9,6 +9,9 @@
 #include <vector>
 #include <deque>
 #include <map>
+#include <string>
+#include <iomanip>
+#include <stack>
 using namespace std;
 
 typedef struct DEDUCTION{
@@ -24,6 +27,13 @@ class LL_1_grammer
     vector<DEDUCTION> deduction;
     //终结符集、非终结符集
     vector<string> nonterminal, terminal;
+    //first集、follow集
+    map<string, vector<string>> first, follow;
+    //起始符
+    string start;
+
+    string x;
+
 public:
 
 
@@ -34,6 +44,20 @@ public:
     void print_test();
 
     void ll_pushback(DEDUCTION mid){deduction.push_back(mid);}
+
+//    bool compare(DEDUCTION x, DEDUCTION y);
+
+    void first_set();
+
+    void follow_set();
+
+    vector<string> get_first_set(string to_get_first);
+
+    vector<string> get_follow_set(string to_get_follow);
+
+    void analysis_table();
+
+    void analysis_program(string text);
 
 
 
