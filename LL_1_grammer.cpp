@@ -237,7 +237,7 @@ void LL_1_grammer::analysis_table()
 
     for (auto i:nonterminal) {
         vector<string> line;
-        cout << "\n" << i << setw(10);
+        cout  << i << setw(10);
         for (int j = 0; j < terminal.size(); j++) {
             if (terminal[j] == "~")
                 continue;
@@ -264,6 +264,7 @@ void LL_1_grammer::analysis_table()
         }
         for (auto out:line)
             cout << setiosflags(ios::right) << setw(10) << out << resetiosflags(ios::right);
+        cout << "\n";
     }
     cout << "\n\n";
 }
@@ -366,19 +367,19 @@ int LL_1_grammer::number_ter(string s)
         return 8;
 }
 
-string LL_1_grammer::process(string input)
+string LL_1_grammer::number_process(string input)
 {
-    string result;
     bool flag = false;
+    string result;
     for (int i = 0; i < input.length(); i++) {
-        char ch = input.at(i);
-        if ('0' <= ch && ch <= '9') {
+        char c = input.at(i);
+        if ('0' <= c && c <= '9') {
             if (!flag) {
                 result += "n";
             }
             flag = true;
         } else {
-            result += ch;
+            result += c;
             flag = false;
         }
     }

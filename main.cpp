@@ -45,9 +45,9 @@ int main()
     string text;
     cout << "ÇëÊäÈë´ýÔ¤²â·ûºÅ´®£º" << endl;
     cin >> text;
-    text = ll.process(text);
+    text = ll.number_process(text);
     ll.analysis_program(text);
 
-
+    system("pause");
     return 0;
 }
